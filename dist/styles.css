@@ -9,6 +9,8 @@
 @media(max-width:700px){.dark:before,.light:before{width:calc(100% - 48px);background-size:50% 100%}}
 @media(prefers-reduced-motion:reduce){.mission h2,.mission h2 span{color:var(--green)}}
 /* Palette and typography sampled from B Found, 17 November 2026. */
+/* Same raster grain, tile scale and opacity as the B Found reference. */
+body::after{content:"";position:fixed;inset:0;z-index:20;pointer-events:none;background-image:url("assets/background-grain.png");background-repeat:repeat;background-position:left top;background-size:150px auto;opacity:.1}
 body{font-family:"Azeret Mono",monospace;font-weight:400}
 .brand{font-family:"Clash Grotesk",sans-serif;font-weight:600}
 h1{font-weight:800;font-size:60px;line-height:1.1;letter-spacing:-3px}
