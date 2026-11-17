@@ -3,3 +3,20 @@ if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const words=mission.
 const galleryPause=document.querySelector('.gallery-pause');
 galleryPause.addEventListener('click',()=>{const paused=gallery.classList.toggle('is-paused');galleryPause.setAttribute('aria-pressed',String(paused));galleryPause.innerHTML=paused?'Reprendre le défilement <span aria-hidden="true">▶</span>':'Mettre en pause <span aria-hidden="true">Ⅱ</span>'});// Tool names appear on hover, keyboard focus, or touch; Escape dismisses them.
 document.querySelectorAll('.tool-hover').forEach(tool=>{tool.addEventListener('keydown',event=>{if(event.key==='Escape'){tool.classList.add('tooltip-dismissed')}});tool.addEventListener('pointerenter',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('focus',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('pointerdown',()=>tool.classList.remove('tooltip-dismissed'))});
+const customCursor=document.querySelector('.site-cursor');
+if(customCursor&&matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  document.documentElement.classList.add('has-custom-cursor');
+  let pointerX=-100,pointerY=-100,frame=0;
+  const hideCursor=()=>customCursor.classList.remove('is-visible');
+  document.addEventListener('pointermove',event=>{
+    if(event.pointerType!=='mouse')return;
+    const overText=event.target instanceof Element&&event.target.closest('input:not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]');
+    customCursor.classList.toggle('is-visible',!overText);
+    pointerX=event.clientX;pointerY=event.clientY;
+    if(!frame)frame=requestAnimationFrame(()=>{customCursor.style.transform=`translate3d(${pointerX-10}px,${pointerY-10}px,0)`;frame=0});
+  },{passive:true});
+  document.addEventListener('mouseout',event=>{if(!event.relatedTarget)hideCursor()});
+  document.addEventListener('keydown',hideCursor);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)hideCursor()});
+  window.addEventListener('blur',hideCursor);
+}
