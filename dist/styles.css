@@ -43,3 +43,6 @@ input:not([type=checkbox]),textarea{font-size:14px}
 .tool{font-size:20px}
 @media(max-width:1150px){h1{font-size:54px}.mission h2{font-size:52px}}
 @media(max-width:700px){h1{font-size:36px;letter-spacing:-1.8px}h2,.mission h2{font-size:34px;letter-spacing:-1.7px;line-height:1.15}.brand{font-size:28px}.hero-copy>p{font-size:15px}.type-strip .wrap{font-size:14px}.service h3{font-size:22px}.tech-title h2{font-size:30px}.tech-title .eyebrow{font-size:8px}.tool{font-size:11px;letter-spacing:-.5px}.tech-grid .more{font-size:8px}.contact h2{font-size:32px}.contact-strip{font-size:8px}.footer-cta{font-size:19px}.signature{font-size:10px}.signature b{font-size:8px}.promises h3{font-size:21px}}
+@font-face{font-family:"Edu VIC WA NT Hand Pre";src:url("https://fonts.gstatic.com/s/eduvicwanthandpre/v3/neInzDmioZxjkInM_tLHFudmcN2Uxxc-9Vnv-4YmimMq127-YLTa4egTDyw.woff2") format("woff2");font-style:normal;font-weight:500;font-display:swap}
+.brand{font-family:"Edu VIC WA NT Hand Pre",sans-serif;font-size:57px;font-weight:500;font-style:italic;line-height:51px;letter-spacing:-2.28px}
+@media(max-width:700px){header{flex-wrap:wrap;height:auto;min-height:80px;gap:16px;padding-bottom:16px}.brand{flex-shrink:0}header .btn.small{margin-left:auto}}
