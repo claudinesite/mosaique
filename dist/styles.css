@@ -97,3 +97,6 @@ input:not([type=checkbox]),textarea{font-size:14px}
 .site-cursor svg{display:block;width:100%;height:100%}
 @media(hover:hover) and (pointer:fine){html.has-custom-cursor,html.has-custom-cursor body,html.has-custom-cursor body *{cursor:none!important}html.has-custom-cursor input:not([type=checkbox]):not([type=radio]),html.has-custom-cursor textarea,html.has-custom-cursor [contenteditable=true]{cursor:text!important}}
 @media(hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.site-cursor{display:none}}
+
+.mobile-studio-label{display:none}
+@media(max-width:700px){.mobile-studio-label{display:block;color:var(--muted);font-size:9px;font-weight:700;line-height:1.3;letter-spacing:.02em;margin-bottom:20px}}
