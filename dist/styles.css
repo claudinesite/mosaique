@@ -44,6 +44,8 @@ input:not([type=checkbox]),textarea{font-size:14px}
 @media(max-width:1150px){h1{font-size:54px}.mission h2{font-size:52px}}
 @media(max-width:700px){h1{font-size:36px;letter-spacing:-1.8px}h2,.mission h2{font-size:34px;letter-spacing:-1.7px;line-height:1.15}.brand{font-size:28px}.hero-copy>p{font-size:15px}.type-strip .wrap{font-size:14px}.service h3{font-size:22px}.tech-title h2{font-size:30px}.tech-title .eyebrow{font-size:8px}.tool{font-size:11px;letter-spacing:-.5px}.tech-grid .more{font-size:8px}.contact h2{font-size:32px}.contact-strip{font-size:8px}.footer-cta{font-size:19px}.signature{font-size:10px}.signature b{font-size:8px}.promises h3{font-size:21px}}
 .brand{font-family:"Azeret Mono",monospace;font-size:30px;font-weight:600;font-style:normal;line-height:30px;letter-spacing:-.9px;text-transform:uppercase}
+.tool img{display:block;width:64px;height:64px;object-fit:contain;padding:8px;box-sizing:border-box}
+@media(max-width:700px){.tool img{width:48px;height:48px;padding:8px}}
 .strip-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .service-reel{--reel-height:80px;height:var(--reel-height);overflow:hidden;mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent)}
 .service-reel-track{display:flex;flex-direction:column;animation:service-reel-loop 12s cubic-bezier(.76,0,.24,1) infinite;animation-delay:var(--reel-delay,0s);will-change:transform}
