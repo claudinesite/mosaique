@@ -10,7 +10,6 @@
 @media(prefers-reduced-motion:reduce){.mission h2,.mission h2 span{color:var(--green)}}
 /* Palette and typography sampled from B Found, 17 November 2026. */
 /* Same raster grain, tile scale and opacity as the B Found reference. */
-body::after{content:"";position:fixed;inset:0;z-index:20;pointer-events:none;background-image:url("assets/background-grain.png");background-repeat:repeat;background-position:left top;background-size:150px auto;opacity:.1}
 body{font-family:"Azeret Mono",monospace;font-weight:400}
 .brand{font-family:"Clash Grotesk",sans-serif;font-weight:600}
 h1{font-weight:800;font-size:60px;line-height:1.1;letter-spacing:-3px}
@@ -92,6 +91,3 @@ input:not([type=checkbox]),textarea{font-size:14px}
 .footer .footer-grid{z-index:1}
 .footer-watermark{position:absolute;bottom:-.18em;left:50%;transform:translateX(-50%);z-index:0;pointer-events:none;user-select:none;font-family:"Clash Grotesk",sans-serif;font-size:23.5vw;font-weight:600;line-height:.8;letter-spacing:-.065em;white-space:nowrap;color:rgba(66,100,255,.025);-webkit-text-stroke:1px rgba(66,100,255,.15)}
 @media(max-width:700px){.footer-watermark{bottom:-.1em;font-size:28vw;color:rgba(66,100,255,.02);-webkit-text-stroke-color:rgba(66,100,255,.12)}}
-
-/* Keep portfolio screenshots above the page-wide grain layer. */
-.work .gallery{position:relative;z-index:21}
