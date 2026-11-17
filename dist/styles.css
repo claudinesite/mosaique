@@ -58,7 +58,7 @@ input:not([type=checkbox]),textarea{font-size:14px}
 @media(prefers-reduced-motion:reduce){.service-reel-track{animation:none;transform:none;will-change:auto}}
 @media(max-width:700px){header{flex-wrap:wrap;height:auto;min-height:80px;gap:16px;padding-bottom:16px}.brand{flex-shrink:0}header .btn.small{margin-left:auto}}
 /* Seamless horizontal loop: two equal groups include the trailing gap. */
-.gallery{display:block;overflow:hidden;padding:0;scroll-snap-type:none;mask-image:linear-gradient(90deg,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+.gallery{display:block;overflow:hidden;padding:0;scroll-snap-type:none;mask-image:none}
 .gallery-track{display:flex;width:max-content;animation:portfolio-loop 52s linear infinite;will-change:transform}
 .gallery-group{display:flex;gap:24px;padding-right:24px;flex-shrink:0}
 .gallery figure{width:720px;flex:0 0 720px;min-width:0}
