@@ -63,6 +63,8 @@ input:not([type=checkbox]),textarea{font-size:14px}
 .tool-hover:focus-visible{outline:2px solid var(--cream)}
 @media(max-width:700px){.tool-label{bottom:calc(50% + 25px);padding:5px 7px;font-size:9px;line-height:12px}.tech-grid>.tool:not(.more){gap:0}}
 @media(max-width:700px){.tool img{width:48px;height:48px;padding:8px}}
+.nav-booking.btn.small{width:190px;font-size:14px}
+@media(max-width:700px){header{gap:8px}.nav-logo{width:min(205px,43vw);font-size:clamp(20px,6vw,27px);padding-inline:10px}.nav-booking.btn.small{width:165px;font-size:13px;padding-inline:10px;gap:5px}}
 .strip-description{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .service-reel{--reel-height:80px;height:var(--reel-height);overflow:hidden;mask-image:linear-gradient(transparent,#000 18%,#000 82%,transparent)}
 .service-reel-track{display:flex;flex-direction:column;animation:service-reel-loop 12s cubic-bezier(.76,0,.24,1) infinite;animation-delay:var(--reel-delay,0s);will-change:transform}
