@@ -156,20 +156,26 @@ html.has-custom-cursor #project-viewer button * { cursor: pointer !important; }
   }
 }
 
-.portfolio-invite {
-  display: grid;
-  justify-items: start;
+.work-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 20px;
 }
-.portfolio-invite a {
+.work-heading .eyebrow { margin: 0; }
+.portfolio-button {
   display: inline-flex;
   align-items: center;
-  gap: .6em;
-  min-height: 44px;
-  margin: 0;
-  font-size: 14px;
-  color: #304fcb;
-  text-underline-offset: .24em;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 12px 18px;
+  font: 600 15px/1.3 "Azeret Mono", monospace;
+  color: white;
+  background: #304fcb;
 }
-.portfolio-invite a:hover { color: #202d6c; }
-.portfolio-invite a:focus-visible { outline: 2px solid currentColor; }
+.portfolio-button:hover { background: #2038a8; }
+.portfolio-button:focus-visible { outline: 2px solid #2038a8; outline-offset: 3px; }
 .gallery-bottom .gallery-pause { align-self: start; }
