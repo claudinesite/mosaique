@@ -227,7 +227,7 @@ textarea:focus-visible, .gallery:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font: 600 clamp(14px, 1.4vw, 20px)/1.15 "Clash Grotesk", Arial, sans-serif;
+  font: 600 clamp(14px, 1.4vw, 20px)/1.15 "Azeret Mono", monospace;
   white-space: nowrap;
 }
 .service-badge svg {
@@ -241,6 +241,10 @@ textarea:focus-visible, .gallery:focus-visible {
   stroke-linecap: round;
 }
 .service-badge:not(:first-child) { visibility: hidden; }
+@media (max-width: 375px) {
+  .service-badge { gap: 5px; font-size: 12px; }
+  .service-badge svg { flex-basis: 17px; width: 17px; height: 17px; }
+}
 @media (max-width: 700px) {
   .type-strip .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .service-reel:nth-child(n + 3) { border-top: 1px solid var(--line); }
