@@ -4,26 +4,6 @@
   gsap.registerPlugin(ScrollTrigger);
 
   const media = gsap.matchMedia();
-  media.add("(prefers-reduced-motion: no-preference) and (min-height: 440px)", () => {
-    const mission = document.querySelector(".mission");
-    mission.classList.add("mission-animated");
-    const scene = gsap.timeline({
-      defaults: { ease: "none" },
-      scrollTrigger: { trigger: mission, start: "top top", end: "bottom bottom", scrub: true }
-    });
-
-    const palette = getComputedStyle(mission);
-    scene.fromTo(mission, { backgroundColor: palette.getPropertyValue("--cream").trim() },
-        { backgroundColor: palette.getPropertyValue("--ink").trim(), duration: 0.64 }, 0.18)
-      .to(".mission-opening", { opacity: 0, y: -18, duration: 0.32 }, 0.18)
-      .set(".mission .eyebrow", { color: "var(--ivory)" }, 0.52)
-      .fromTo(".mission-closing", { opacity: 0, y: 18 },
-        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.50)
-      .to({}, { duration: 0.15 });
-
-    return () => mission.classList.remove("mission-animated");
-  });
-
   media.add("(prefers-reduced-motion: no-preference)", () => {
     const restorations = [];
 
