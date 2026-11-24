@@ -40,8 +40,7 @@ form.addEventListener('submit',async event=>{
     submitButton.disabled=false;
   }
 });
-const mission=document.querySelector('.mission h2');
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const words=mission.textContent.trim().split(/\s+/);mission.textContent='';words.forEach(word=>{const span=document.createElement('span');span.textContent=word+' ';mission.append(span)});let pending=false;function paint(){const box=mission.getBoundingClientRect();const progress=Math.max(0,Math.min(1,(innerHeight*.85-box.top)/(innerHeight*.65)));[...mission.children].forEach((word,index)=>word.classList.toggle('revealed',index/words.length<progress));pending=false}addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(paint)}},{passive:true});addEventListener('resize',paint);paint()}const gallery=document.getElementById('project-gallery');
+const gallery=document.getElementById('project-gallery');
 const galleryPause=document.querySelector('.gallery-pause');
 galleryPause.addEventListener('click',()=>{const paused=gallery.classList.toggle('is-paused');galleryPause.setAttribute('aria-pressed',String(paused));galleryPause.innerHTML=paused?'Reprendre le défilement <span aria-hidden="true">▶</span>':'Mettre en pause <span aria-hidden="true">Ⅱ</span>'});// Tool names appear on hover, keyboard focus, or touch; Escape dismisses them.
 document.querySelectorAll('.tool-hover').forEach(tool=>{tool.addEventListener('keydown',event=>{if(event.key==='Escape'){tool.classList.add('tooltip-dismissed')}});tool.addEventListener('pointerenter',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('focus',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('pointerdown',()=>tool.classList.remove('tooltip-dismissed'))});

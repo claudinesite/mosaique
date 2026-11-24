@@ -372,3 +372,24 @@ textarea:focus-visible, .gallery:focus-visible {
   .hero-circuit { right: 0; bottom: 5px; width: min(92%, 480px); opacity: .45; }
 }
 .promises > article { min-width: 0; overflow-wrap: break-word; }
+
+.word-mask {
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: clip;
+  padding-block: .12em;
+  margin-block: -.12em;
+}
+.word-mask > span { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .timeline article > div { position: relative; }
+  .timeline article > div::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 3px;
+    background: var(--ink);
+    transform-origin: left;
+    transform: scaleX(var(--step-progress, 0));
+  }
+}
