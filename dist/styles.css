@@ -373,60 +373,27 @@ textarea:focus-visible, .gallery:focus-visible {
 }
 .promises > article { min-width: 0; overflow-wrap: break-word; }
 
-.mission { isolation: isolate; }
-.mission-symbols { position: absolute; }
-.mission-panel {
-  min-height: 100svh;
-  display: grid;
-  align-content: center;
-  overflow: clip;
-}
-.mission .mission-stage { text-align: center; padding-block: clamp(80px, 20svh, 200px); }
-.mission .mission-stage h2, .mission-statement {
+.mission .mission-stage { text-align: center; }
+.mission .mission-stage h2 {
   max-width: 28ch;
   margin-inline: auto;
   font: 600 clamp(26px, 3.8vw, 64px)/1.04 "Clash Grotesk", Arial, sans-serif;
   letter-spacing: -.04em;
   text-wrap: balance;
 }
-.mission-circuit {
-  position: absolute;
-  top: 6%;
-  left: 0;
-  width: min(clamp(210px, 44vw, 780px), 65svh);
-  height: auto;
-  pointer-events: none;
-  color: #515847;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.4;
-  stroke-linejoin: round;
+.mission h2 .mission-opening, .mission h2 .mission-closing { color: var(--ink); }
+.mission-animated { min-height: 210svh; }
+.mission-animated .mission-stage {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  padding-block: 32px;
 }
-.mission-panel.dark .mission-circuit {
-  inset: auto 0 7% auto;
-  transform: rotate(180deg);
-  color: var(--lime);
-}
-.mission-traces { opacity: .42; }
-.mission-signal { display: none; }
-@media (prefers-reduced-motion: no-preference) {
-  .mission-signal {
-    display: inline;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-dasharray: 22 578;
-    animation: mission-current 5s linear infinite;
-  }
-  @keyframes mission-current { to { stroke-dashoffset: -600; } }
-}
-@media (prefers-reduced-motion: no-preference) and (min-height: 440px) {
-  .mission-panel.light { position: sticky; top: 0; }
-}
-@media (max-height: 439px), (prefers-reduced-motion: reduce) {
-  .mission-panel { min-height: 60svh; }
-  .mission-circuit { width: min(34vw, 52svh, 380px); top: 1%; }
-  .mission-panel.dark .mission-circuit { bottom: 1%; }
-}
+.mission-animated h2 { display: grid; align-items: center; }
+.mission-animated h2 > span { grid-area: 1 / 1; }
+.mission-animated h2 .mission-closing { color: var(--cream); }
 
 .word-mask {
   display: inline-block;
