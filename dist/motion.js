@@ -17,7 +17,7 @@
     });
 
     if (window.scrollY === 0 && !location.hash) {
-      context.reveal(".hero-copy h1, .hero-copy > p, .signature", 20, 0.09);
+      context.reveal(".hero-heading h1, .hero-copy, .hero-feature, .signature", 20, 0.09);
     }
 
     function revealOnEntry(trigger, elements, distance, stagger) {
