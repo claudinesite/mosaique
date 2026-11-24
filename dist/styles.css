@@ -226,13 +226,7 @@ textarea:focus-visible, .gallery:focus-visible {
   text-wrap: balance;
 }
 .hero-heading h1 .hero-line-break { display: none; }
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(250px, 27%, 460px);
-  gap: 32px;
-  align-items: start;
-  margin-top: 32px;
-}
+.hero-copy { margin-top: 32px; }
 .hero-copy > p {
   max-width: 49ch;
   color: var(--muted);
@@ -243,35 +237,6 @@ textarea:focus-visible, .gallery:focus-visible {
   width: min(100%, 340px);
   margin-top: 30px;
 }
-.hero-feature {
-  display: block;
-  background: var(--panel);
-  border: 1px solid var(--line);
-}
-.hero-feature:hover,
-.hero-feature:focus-visible { border-color: var(--lime); }
-.hero-feature img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.hero-feature-caption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 13px 16px;
-}
-.hero-feature-caption small,
-.hero-feature-caption strong { display: block; }
-.hero-feature-caption small {
-  margin-bottom: 5px;
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: .06em;
-}
-.hero-feature-caption strong { font-size: 15px; }
-.hero-feature-arrow { color: var(--lime); }
 .hero .signature { margin-top: 42px; }
 .hero-watermark {
   position: absolute;
@@ -310,7 +275,7 @@ textarea:focus-visible, .gallery:focus-visible {
   }
   .hero-content { padding-top: 46px; padding-bottom: 34px; }
   .hero-heading h1 { font-size: clamp(27px, 8.8vw, 52px); }
-  .hero-layout { grid-template-columns: 1fr; gap: 32px; margin-top: 22px; }
+  .hero-copy { margin-top: 22px; }
   .hero-copy > .btn { width: 100%; margin-top: 24px; }
   .hero .signature { margin-top: 30px; }
   .hero-watermark { font-size: 20vw; }
