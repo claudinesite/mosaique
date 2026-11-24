@@ -261,9 +261,9 @@ textarea:focus-visible, .gallery:focus-visible {
   .type-strip:hover .service-badge { animation-play-state: paused; }
 }
 @keyframes service-swap {
-  0% { opacity: 0; transform: translateX(-40px); }
-  3.5%, 21.5% { opacity: 1; transform: translateX(0); }
-  25%, 100% { opacity: 0; transform: translateX(40px); }
+  0% { opacity: 0; transform: translateY(40px); }
+  3.5%, 21.5% { opacity: 1; transform: translateY(0); }
+  25%, 100% { opacity: 0; transform: translateY(-40px); }
 }
 .hero-content {
   padding-top: clamp(66px, 6.8vw, 112px);
