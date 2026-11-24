@@ -212,7 +212,7 @@ textarea:focus-visible, .gallery:focus-visible {
 }
 .hero-content {
   padding-top: clamp(66px, 6.8vw, 112px);
-  padding-bottom: 40px;
+  padding-bottom: 100px;
 }
 .hero-label {
   margin-bottom: 14px;
@@ -237,7 +237,7 @@ textarea:focus-visible, .gallery:focus-visible {
   width: min(100%, 340px);
   margin-top: 30px;
 }
-.hero .signature { margin-top: 42px; }
+.hero .signature { margin-top: 54px; }
 .hero-watermark {
   position: absolute;
   z-index: 0;
@@ -308,11 +308,11 @@ textarea:focus-visible, .gallery:focus-visible {
     font-size: clamp(10px, 3.1vw, 12px);
     padding: 5px 8px;
   }
-  .hero-content { padding-top: 46px; padding-bottom: 34px; }
+  .hero-content { padding-top: 46px; padding-bottom: 66px; }
   .hero-heading h1 { font-size: clamp(27px, 8.8vw, 52px); }
   .hero-copy { margin-top: 22px; }
   .hero-copy > .btn { width: 100%; margin-top: 24px; }
-  .hero .signature { margin-top: 30px; }
+  .hero .signature { margin-top: 38px; }
   .hero-watermark { font-size: 20vw; }
   .hero-circuit { right: 0; bottom: 5px; width: min(92%, 480px); opacity: .45; }
 }
