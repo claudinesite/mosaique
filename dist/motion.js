@@ -3,11 +3,32 @@
   if (!gsap || !ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
+  const media = gsap.matchMedia();
+  media.add("(prefers-reduced-motion: no-preference) and (min-height: 440px)", () => {
+    const mission = document.querySelector(".mission");
+    mission.classList.add("mission-animated");
+    const scene = gsap.timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: { trigger: mission, start: "top top", end: "bottom bottom", scrub: true }
+    });
+
+    const palette = getComputedStyle(mission);
+    scene.fromTo(mission, { backgroundColor: palette.getPropertyValue("--cream").trim() },
+        { backgroundColor: palette.getPropertyValue("--ink").trim(), duration: 0.64 }, 0.18)
+      .to(".mission-opening", { opacity: 0, y: -18, duration: 0.32 }, 0.18)
+      .set(".mission .eyebrow", { color: "var(--ivory)" }, 0.52)
+      .fromTo(".mission-closing", { opacity: 0, y: 18 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 0.50)
+      .to({}, { duration: 0.15 });
+
+    return () => mission.classList.remove("mission-animated");
+  });
+
+  media.add("(prefers-reduced-motion: no-preference)", () => {
     const restorations = [];
 
     // Keep explicit line breaks, emphasis and spaces so text still wraps naturally.
-    function splitWords(heading, masked = true) {
+    function splitWords(heading) {
       const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
       const nodes = [];
       while (walker.nextNode()) nodes.push(walker.currentNode);
@@ -28,11 +49,9 @@
           const word = document.createElement("span");
           word.textContent = part;
           words.push(word);
-          const wrapper = masked ? document.createElement("span") : word;
-          if (masked) {
-            wrapper.className = "word-mask";
-            wrapper.append(word);
-          }
+          const wrapper = document.createElement("span");
+          wrapper.className = "word-mask";
+          wrapper.append(word);
           wrapper.setAttribute("aria-hidden", "true");
           fragment.append(wrapper);
         }
@@ -72,12 +91,6 @@
     gsap.from(".gallery", {
       clipPath: "inset(0 0 30% 0)", duration: 0.85, ease: "power3.out",
       clearProps: "clipPath", scrollTrigger: entry(".gallery")
-    });
-
-    const mission = document.querySelector(".mission h2");
-    gsap.fromTo(splitWords(mission, false), { color: "var(--muted-on-light)" }, {
-      color: "var(--ink)", stagger: 0.12, duration: 0.32, ease: "none",
-      scrollTrigger: { trigger: mission, start: "top 82%", end: "bottom 43%", scrub: true }
     });
 
     document.querySelectorAll(".services h2, .section-intro h2, .tech-title h2, .contact h2").forEach(title => {
