@@ -200,12 +200,11 @@ textarea:focus-visible, .gallery:focus-visible {
 .site-cursor { filter: drop-shadow(0 0 1px var(--ink)); }
 
 .hero {
-  --hero-gutter: clamp(24px, 3vw, 48px);
-  --hero-width: 1520px;
+  --hero-gutter: clamp(24px, 3vw, 40px);
 }
 .hero .hero-wrap,
 .hero::before {
-  width: min(var(--hero-width), calc(100% - 2 * var(--hero-gutter)));
+  width: calc(100% - 2 * var(--hero-gutter));
 }
 .hero .hero-wrap {
   max-width: none;
@@ -229,7 +228,7 @@ textarea:focus-visible, .gallery:focus-visible {
 .hero-heading h1 .hero-line-break { display: none; }
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(250px, 27%);
+  grid-template-columns: minmax(0, 1fr) clamp(250px, 27%, 460px);
   gap: 32px;
   align-items: start;
   margin-top: 32px;
@@ -277,7 +276,7 @@ textarea:focus-visible, .gallery:focus-visible {
 .hero-watermark {
   position: absolute;
   z-index: 0;
-  right: max(var(--hero-gutter), calc((100% - var(--hero-width)) / 2));
+  right: var(--hero-gutter);
   bottom: -.075em;
   color: rgba(244, 244, 232, .13);
   font: 600 min(17.3vw, 272px)/.85 "Clash Grotesk", sans-serif;
