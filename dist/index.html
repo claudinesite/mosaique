@@ -3,6 +3,38 @@
 <body><a class="skip" href="#main">Aller au contenu</a><main id="main">
 <section class="dark hero">
   <div class="hero-watermark" aria-hidden="true">MOSAIQUE</div>
+  <svg class="hero-circuit" viewBox="0 0 800 360" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="circuit-upper" d="M172 123H287L349 61H553L591 23H792"/>
+      <path id="circuit-main" d="M83 191H252L303 140H474L531 83H704L757 136H792"/>
+      <path id="circuit-center" d="M224 235H360L397 198H597L657 138H730"/>
+      <path id="circuit-lower" d="M138 294H318L367 245H562L609 292H792"/>
+    </defs>
+    <g class="circuit-traces">
+      <use href="#circuit-upper"/>
+      <use href="#circuit-main"/>
+      <use href="#circuit-center"/>
+      <use href="#circuit-lower"/>
+      <path d="M349 61V43L382 10H491M303 140V114M474 140L510 176H550M397 198V176M597 198H679L713 232H792M367 245V276L408 317H529L565 353H698M609 292V323H792"/>
+    </g>
+    <g class="circuit-terminals">
+      <circle cx="172" cy="123" r="4"/>
+      <circle cx="83" cy="191" r="4"/>
+      <circle cx="224" cy="235" r="4"/>
+      <circle cx="138" cy="294" r="4"/>
+      <circle cx="491" cy="10" r="3"/>
+      <circle cx="474" cy="140" r="4"/>
+      <circle cx="397" cy="198" r="4"/>
+      <circle cx="609" cy="292" r="4"/>
+      <circle cx="698" cy="353" r="3"/>
+    </g>
+    <g class="circuit-pulses">
+      <path pathLength="100" d="M172 123H287L349 61H553L591 23H792"/>
+      <path pathLength="100" d="M83 191H252L303 140H474L531 83H704L757 136H792"/>
+      <path pathLength="100" d="M224 235H360L397 198H597L657 138H730"/>
+      <path pathLength="100" d="M138 294H318L367 245H562L609 292H792"/>
+    </g>
+  </svg>
   <div class="wrap hero-wrap">
     <header>
       <a class="brand nav-logo" href="#" aria-label="Mosaïque accueil"><span>mosaique</span><span class="pixel-arrow" aria-hidden="true">⠿</span></a>

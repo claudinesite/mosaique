@@ -249,6 +249,41 @@ textarea:focus-visible, .gallery:focus-visible {
   pointer-events: none;
   user-select: none;
 }
+.hero-circuit {
+  position: absolute;
+  z-index: 0;
+  right: var(--hero-gutter);
+  bottom: 12px;
+  width: min(55%, 940px);
+  height: auto;
+  pointer-events: none;
+  mask-image: linear-gradient(90deg, transparent, #000 30%, #000 94%, transparent);
+}
+.circuit-traces,
+.circuit-terminals,
+.circuit-pulses {
+  fill: none;
+  stroke: var(--lime);
+}
+.circuit-traces { stroke-opacity: .25; }
+.circuit-terminals { fill: var(--ink); stroke-opacity: .5; }
+.circuit-pulses { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .circuit-pulses { display: inline; }
+  .circuit-pulses path {
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-dasharray: 6 108;
+    animation: circuit-pulse 4.4s linear infinite;
+  }
+  .circuit-pulses path:nth-child(2) { animation-delay: -2.1s; }
+  .circuit-pulses path:nth-child(3) { animation-duration: 5.2s; animation-delay: -3.4s; }
+  .circuit-pulses path:nth-child(4) { animation-duration: 5.8s; animation-delay: -1.3s; }
+}
+@keyframes circuit-pulse {
+  from { stroke-dashoffset: 7; }
+  to { stroke-dashoffset: -107; }
+}
 @media (min-width: 1100px) {
   .hero-heading h1 {
     max-width: 86%;
@@ -279,5 +314,6 @@ textarea:focus-visible, .gallery:focus-visible {
   .hero-copy > .btn { width: 100%; margin-top: 24px; }
   .hero .signature { margin-top: 30px; }
   .hero-watermark { font-size: 20vw; }
+  .hero-circuit { right: 0; bottom: 5px; width: min(92%, 480px); opacity: .45; }
 }
 .promises > article { min-width: 0; overflow-wrap: break-word; }
