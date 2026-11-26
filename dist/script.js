@@ -40,9 +40,7 @@ form.addEventListener('submit',async event=>{
     submitButton.disabled=false;
   }
 });
-const gallery=document.getElementById('project-gallery');
-const galleryPause=document.querySelector('.gallery-pause');
-galleryPause.addEventListener('click',()=>{const paused=gallery.classList.toggle('is-paused');galleryPause.setAttribute('aria-pressed',String(paused));galleryPause.innerHTML=paused?'Reprendre le défilement <span aria-hidden="true">▶</span>':'Mettre en pause <span aria-hidden="true">Ⅱ</span>'});// Tool names appear on hover, keyboard focus, or touch; Escape dismisses them.
+// Tool names appear on hover, keyboard focus, or touch; Escape dismisses them.
 document.querySelectorAll('.tool-hover').forEach(tool=>{tool.addEventListener('keydown',event=>{if(event.key==='Escape'){tool.classList.add('tooltip-dismissed')}});tool.addEventListener('pointerenter',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('focus',()=>tool.classList.remove('tooltip-dismissed'));tool.addEventListener('pointerdown',()=>tool.classList.remove('tooltip-dismissed'))});
 const customCursor=document.querySelector('.site-cursor');
 if(customCursor&&matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){

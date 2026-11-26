@@ -3,7 +3,7 @@
   const viewer = document.getElementById("project-viewer");
   if (typeof viewer.showModal !== "function") return;
 
-  const projects = [...gallery.querySelectorAll(".gallery-group:not([aria-hidden]) .project-preview")];
+  const projects = [...gallery.querySelectorAll(".project-preview")];
   const image = document.getElementById("viewer-image");
   const title = document.getElementById("viewer-title");
   const count = document.getElementById("viewer-count");
@@ -14,7 +14,7 @@
     const preview = projects[selected];
     image.src = preview.href;
     image.alt = preview.querySelector("img").alt;
-    title.textContent = preview.closest("figure").querySelector("strong").textContent.replace(/^\d+\s*\/\s*/, "");
+    title.textContent = preview.closest("figure").querySelector("strong").textContent;
     count.textContent = `${selected + 1} / ${projects.length}`;
   }
 
@@ -22,8 +22,7 @@
     const preview = event.target.closest(".project-preview");
     if (!preview || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    showProject(projects.findIndex(project => project.href === preview.href));
-    gallery.classList.add("is-viewing");
+    showProject(projects.indexOf(preview));
     viewer.showModal();
   });
 
@@ -38,5 +37,4 @@
     event.preventDefault();
     showProject(selected + (event.key === "ArrowLeft" ? -1 : 1));
   });
-  viewer.addEventListener("close", () => gallery.classList.remove("is-viewing"));
 })();

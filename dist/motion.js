@@ -69,9 +69,11 @@
       yPercent: -22, ease: "none",
       scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true }
     });
-    gsap.from(".gallery", {
-      clipPath: "inset(0 0 30% 0)", duration: 0.85, ease: "power3.out",
-      clearProps: "clipPath", scrollTrigger: entry(".gallery")
+    document.querySelectorAll(".gallery figure").forEach(figure => {
+      gsap.from(figure, {
+        y: 24, opacity: 0, duration: 0.65, ease: "power3.out",
+        clearProps: "transform,opacity", scrollTrigger: entry(figure)
+      });
     });
 
     const mission = document.querySelector(".mission h2");
@@ -80,7 +82,7 @@
       scrollTrigger: { trigger: mission, start: "top 82%", end: "bottom 43%", scrub: true }
     });
 
-    document.querySelectorAll(".services h2, .section-intro h2, .tech-title h2, .contact h2").forEach(title => {
+    document.querySelectorAll(".work-heading h2, .services h2, .section-intro h2, .tech-title h2, .contact h2").forEach(title => {
       gsap.from(splitWords(title), { ...wordEntrance, scrollTrigger: entry(title) });
     });
 
