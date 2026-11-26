@@ -293,10 +293,24 @@ textarea:focus-visible, .gallery:focus-visible {
   font-size: clamp(14px, 1.25vw, 18px);
   line-height: 1.55;
 }
-.hero-copy > .btn {
-  width: min(100%, 340px);
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
   margin-top: 30px;
 }
+.hero-actions .btn { width: min(100%, 300px); }
+.hero-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+  min-height: 44px;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: .24em;
+}
+.hero-contact:is(:hover, :focus-visible) { color: var(--lime); }
 .hero .signature { margin-top: 54px; }
 .hero-watermark {
   position: absolute;
@@ -371,7 +385,8 @@ textarea:focus-visible, .gallery:focus-visible {
   .hero-content { padding-top: 46px; padding-bottom: 94px; }
   .hero-heading h1 { font-size: clamp(27px, 8.8vw, 52px); }
   .hero-copy { margin-top: 22px; }
-  .hero-copy > .btn { width: 100%; margin-top: 24px; }
+  .hero-actions { margin-top: 24px; }
+  .hero-actions .btn { width: 100%; }
   .hero .signature { margin-top: 38px; }
   .hero-watermark { font-size: 20vw; }
   .hero-circuit { right: 0; bottom: 5px; width: min(92%, 480px); opacity: .45; }
